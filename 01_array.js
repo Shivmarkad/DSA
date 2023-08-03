@@ -8,8 +8,8 @@ for(let i= 0;i<data.length;i++){
 
 //accessing at perticular index
 
-let ind = 3;
+let index = 3;
 
-console.log(`Element at index ${ind} is ${data[ind]}`)
+console.log(`Element at index ${ind} is ${data[index]}`)
 
 
