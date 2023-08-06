@@ -8,7 +8,8 @@ let end = arr.length-1;
 
 function search(arr,item,start,end){
 
-    let mid = parseInt((start+end)/2);
+    // let mid = parseInt((start+end)/2);
+    let mid = (start+end)/2;
 
     if(start>end){
         console.log("item not in the array");
@@ -20,7 +21,7 @@ function search(arr,item,start,end){
     }else if((item<arr[mid])){
         search(arr,item,start,mid-1);
     }else{
-        search(arr,item,mid+1,end)
+        search(arr,item,mid+1,end);
     };
 }
 search(arr,ele,start,end);

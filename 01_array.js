@@ -10,6 +10,7 @@ for(let i= 0;i<data.length;i++){
 
 let index = 3;
 
-console.log(`Element at index ${ind} is ${data[index]}`)
+console.log(`Element at index ${index} is ${data[index]}`)
+console.log(data.indexOf(6))
 
 
