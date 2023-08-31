@@ -22,8 +22,5 @@ function pop(){
 push(12);
 push(33);
 push(88);
-push(12);
-push(33);
-push(88);
 pop();
 console.log(data);
