@@ -67,7 +67,7 @@ class BST {
         return result;
     }
 
-    dfsPostOrder() {
+    dfsPreOrder() {
         let result = []
         function traverse(currentNode) {
             result.push(currentNode.data)
@@ -78,7 +78,7 @@ class BST {
         return result
     };
 
-    dfsPreOrder() {
+    dfsPostOrder() {
         let result = []
         function traverse(currentNode) {
             if (currentNode.left) traverse(currentNode.left)
