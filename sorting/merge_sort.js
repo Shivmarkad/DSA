@@ -7,10 +7,10 @@ function mergeSort(arr){
    const mid = Math.floor(arr.length/2)
    const leftArr = arr.slice(0,mid);
    const rightArr = arr.slice(mid);
-   return merge(mergeSort(leftArr),mergeSort(rightArr));
+   return sort(mergeSort(leftArr),mergeSort(rightArr));
 }
-
-function merge(leftArr,rightArr){
+    
+function sort(leftArr,rightArr){
     const sortedArr = [];
 
     while(leftArr.length && rightArr.length){
