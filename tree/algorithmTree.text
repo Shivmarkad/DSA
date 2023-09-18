@@ -1,0 +1,19 @@
+
+#1 - create node class to create intance of that class to add new node in the tree
+
+#2 - create another BST class to create with constructor having root as 
+    initial node with data passed
+
+#3 - create addNode method to add new node with data in the tree
+    -create instance of Node class with data provided
+    -first check whether the root value is null or not
+        -if null : assign this.root value as instance of Node class
+    
+    - create function searchTree which will be used recursively 
+        to check left and right is null or not
+
+        -check if data provided is less than root data
+            -call searchTree for left node
+        -check if data provided is larger than root data
+            -call searchTree for right node
+    -return searchTree function for rootNode
