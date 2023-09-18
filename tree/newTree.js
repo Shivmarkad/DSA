@@ -13,7 +13,8 @@ class BST{
 
     addNode(data){
         const newNode = new Node(data)
-        if(!this.root){
+        if(!this.root.data){
+            console.log("this is null",this.root)
             this.root = newNode
         }
         let node = this.root;
@@ -37,6 +38,22 @@ class BST{
         }
         return searchTree(node)
     }
+    searchData(data){
+        let node = this.root
+        function findData(node){
+            if(node.data == data){
+                return  true
+            }
+            if(data<node.data && node.left){
+                return findData(node.left)
+            }else if(data>node.data && node.right){
+                return findData(node.right)
+            }
+            return false
+        }
+        return findData(node)
+    }
+
 }
 
 const tree = new BST(12)
@@ -44,4 +61,5 @@ const tree = new BST(12)
 tree.addNode(1)
 tree.addNode(6)
 tree.addNode(15)
+console.log(tree.searchData(1))
 console.log(tree)
