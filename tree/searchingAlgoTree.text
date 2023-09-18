@@ -1,0 +1,13 @@
+#1 - create class method to search data in the tree
+
+#2 - assign root note to a variable
+
+#3 - create a function to recursively check the data in each node
+
+    -if data matches with node's data then return true
+    -check if data is less then node's data or greater
+     - if less call step #3 function on left node 
+     - if greater then call step #3 function on right node
+     - if not found then return false
+    
+#4 call #3 function for root node
