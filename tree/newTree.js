@@ -14,7 +14,6 @@ class BST{
     addNode(data){
         const newNode = new Node(data)
         if(!this.root.data){
-            console.log("this is null",this.root)
             this.root = newNode
         }
         let node = this.root;
@@ -54,12 +53,45 @@ class BST{
         return findData(node)
     }
 
+    deleteNode(data){
+        let node = this.root;
+
+        function searchSmallest(node){
+            let curData;
+            if(node.left == null){
+                curData = node.data
+                node = node.right
+                return curData
+            }
+        return searchSmallest(node.left)
+        }
+
+        function findNodeData(node){
+            if(data == node.data && node.right){
+                let smallestDataNode = searchSmallest(node.right)
+                node.data = smallestDataNode;
+                return true
+            }
+            if(data<node.data){
+                return findNodeData(node.left)
+            }
+            if(data>node.data){
+                return findNodeData(node.right)
+            }
+            return false
+        }
+       return findNodeData(node)
+    }
 }
 
-const tree = new BST(12)
+const tree = new BST(15)
 
 tree.addNode(1)
 tree.addNode(6)
 tree.addNode(15)
+tree.addNode(22)
+tree.addNode(23)
+tree.deleteNode(15)
 console.log(tree.searchData(1))
 console.log(tree)
+// console.log(tree)
