@@ -52,35 +52,37 @@ class BST{
         }
         return findData(node)
     }
-
-    deleteNode(data){
-        let node = this.root;
-
-        function searchSmallest(node){
-            let curData;
-            if(node.left == null){
-                curData = node.data
-                node = node.right
-                return curData
-            }
-        return searchSmallest(node.left)
+    min(root){
+        if(!root.left){
+            return root.data
+        }else{
+            return this.min(root.left)
         }
-
-        function findNodeData(node){
-            if(data == node.data && node.right){
-                let smallestDataNode = searchSmallest(node.right)
-                node.data = smallestDataNode;
-                return true
-            }
-            if(data<node.data){
-                return findNodeData(node.left)
-            }
-            if(data>node.data){
-                return findNodeData(node.right)
-            }
-            return false
+    }
+    delete(data){
+        this.root = this.deleteNode(this.root, data)
+    }
+    deleteNode(root, data){
+        if(root == null){
+            return root
         }
-       return findNodeData(node)
+        if(data< root.data){
+            root.left = this.deleteNode(root.left, data)
+        }else if(data > root.data){
+            root.right = this.deleteNode(root.right, data)
+        }else{
+            if(!root.left && !root.right){
+                return null
+            }
+            if(!root.left){
+                return root.right
+            }else if(!root.right){
+                return root.left
+            }
+            root.data = this.min(root.right)
+            root.right = this.deleteNode(root.right, root.data)
+        }
+        return root
     }
 }
 
@@ -88,10 +90,9 @@ const tree = new BST(15)
 
 tree.addNode(1)
 tree.addNode(6)
-tree.addNode(15)
+tree.addNode(5)
 tree.addNode(22)
 tree.addNode(23)
-tree.deleteNode(15)
+tree.delete(15)
 console.log(tree.searchData(1))
 console.log(tree)
-// console.log(tree)
