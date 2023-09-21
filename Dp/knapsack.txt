@@ -43,3 +43,37 @@ function knapsack(wtArray, valArray, capacity = w, length_arr=n)
         return knapsack(wtArray, valArray, w, n-1)
 
 }
+------------------------------------------------------------------
+
+#initialize matrix t with rows and column equal to n and values -1
+
+function knapsack(wtArray, valArray, capacity = w, length_arr=n)
+{
+    BASE Condition => Think for smallest valid input
+        
+        if(n== 0 || w==0){
+            return 0
+        }
+        
+        if(t[n][w] != -1){
+            return t[n][w]
+        }
+
+    CHOICE Diagram
+
+    #item 1
+
+    if w1 <= w
+        can include or not
+
+        if include 
+
+            return t[n][w] = maximum(valArray(n-1) + knapsack(wtArray, valArray, w- wtArray[n-1],n-1), 
+                    knapsack(wtArray, valArray, w, n-1))
+   
+    if w1 > w
+        don't include
+
+        return t[n][w] = knapsack(wtArray, valArray, w, n-1)
+
+}
