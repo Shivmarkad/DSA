@@ -1,0 +1,14 @@
+#1-create class method to iterate over the tree
+
+#2- create deleteNode method which takes node add data to be removed 
+    -check whether the node is null 
+        - if null return that node 
+    -check whether data is larger or smaller then node data 
+        -if smaller call deleteNode for node's left
+        -if larger call deleteNode for node' right
+    -both statements false that means we found the node which has data to be deleted
+        -check current node is having right and left null or not
+        -if both the right and left are null then return null
+        -check if left null then return right if right null then return left
+    -if both the condition fails then replace node data with right tree's smallest data
+    -then repeat step 2 for this node and the data at that node
