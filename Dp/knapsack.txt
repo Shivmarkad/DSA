@@ -1,0 +1,45 @@
+given two arrays 
+first one having weight and second one corresponding value
+and total capacity also provided 
+need to calculate maximum profit
+
+wtArray = [1,3,4,5]
+
+valArray = [1,4,5,7]
+
+capacity = 7kg
+
+-here for every weight we have coices as all the 
+
+
+Dp - Recursive - memoization - top-down(dp)
+
+DP = Recursion + storage
+
+
+function knapsack(wtArray, valArray, capacity = w, length_arr=n)
+{
+    BASE Condition => Think for smallest valid input
+        
+        if(n== 0 || w==0){
+            return 0
+        }
+
+    CHOICE Diagram
+
+    #item 1
+
+    if w1 <= w
+        can include or not
+
+        if include 
+
+            return maximum(valArray(n-1) + knapsack(wtArray, valArray, w- wtArray[n-1],n-1), 
+                    knapsack(wtArray, valArray, w, n-1))
+   
+    if w1 > w
+        don't include
+
+        return knapsack(wtArray, valArray, w, n-1)
+
+}
