@@ -1,0 +1,10 @@
+
+As the tree satisfies Max-Heap property, then the largest item is stored at the root node.
+
+Swap: Swap the first element with the last element.
+
+Remove: Remove the last element from the heap.
+
+Heapify: Heapify the root element again so that we have the highest element at root.
+
+Repeat this until all the items of the list are sorted.
