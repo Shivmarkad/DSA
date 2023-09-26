@@ -26,9 +26,16 @@ function sort(arr, n){
     for(let i = parseInt(n/2 - 1); i>=0; i--){
         maxHeapify(arr, n, i)
     }
+
+    for(let i = n-1; i>= 0; i--){
+        let temp = arr[0];
+        arr[0] = arr[i]
+        arr[i] = temp;
+        maxHeapify(arr, i, 0)
+    }
 }
 
-const array = [1, 4, 2, 5, 3]
+const array = [1, 4, 2, 5, 3,56,8,9]
 
 sort(array, array.length)
 
