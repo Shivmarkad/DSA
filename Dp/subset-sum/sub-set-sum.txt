@@ -1,0 +1,18 @@
+
+#1 - create function which takes array , sum and the index from which combination have to count 
+
+#2- Base Conditions 
+    - if we achieved the sum retun 1
+    
+    - if we crossed the sum retun 0 as the combination of element's sum crossing the sum
+
+    - if we iterated to all the element then retun 0 as there are no more elements to choose
+
+    -we have two option to include that array's element or not include 
+
+    - if we include to then subtract this value from sum and increase i value by one for next iteration
+
+    - if we don't include then just increase value of i by one without subtracting from the sum 
+
+    - call same function for both the cases and add the return value and retun the addition.
+
