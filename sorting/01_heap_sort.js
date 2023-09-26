@@ -20,8 +20,16 @@ function maxHeapify(arr, n , i)
         }
 }
 
+function sort(arr, n){
+
+    //building heap
+    for(let i = parseInt(n/2 - 1); i>=0; i--){
+        maxHeapify(arr, n, i)
+    }
+}
+
 const array = [1, 4, 2, 5, 3]
 
-maxHeapify(array, array.length,1)
+sort(array, array.length)
 
 console.log(array)
